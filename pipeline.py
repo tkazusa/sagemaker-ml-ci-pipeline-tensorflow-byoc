@@ -26,7 +26,8 @@ WORKFLOW_ROLE='arn:aws:iam::815969174475:role/StepFunctionsWorkflowExecutionRole
 def create_estimator():
     hyperparameters = {'batch_size': args.batch_size,'epochs': args.epoch}
     output_path = 's3://{}/output'.format(BUCKET)
-    estimator = Estimator(image_name=args.train_url,
+    estimator = Estimator(
+                        image_uri=args.train_url,
                         role=SAGEMAKER_ROLE,
                         hyperparameters=hyperparameters,
                         train_instance_count=1,
