@@ -46,7 +46,6 @@ if __name__ == '__main__':
     parser.add_argument('--epoch', type=str, default=os.environ['EPOCH'])
     args = parser.parse_args()
 
-
     
     # SFn の実行に必要な情報を渡す際のスキーマを定義します
     schema = {'TrainJobName': str}
@@ -68,7 +67,7 @@ if __name__ == '__main__':
     )
 
     # 各 Step を連結
-    chain_list = [etl_step, training_step]
+    chain_list = [training_step]
     workflow_definition = steps.Chain(chain_list)
 
     # Workflow の作成
