@@ -26,7 +26,8 @@ WORKFLOW_ROLE='arn:aws:iam::815969174475:role/StepFunctionsWorkflowExecutionRole
 def create_estimator():
     hyperparameters = {'batch_size': args.batch_size,'epochs': args.epoch}
     output_path = 's3://{}/output'.format(BUCKET)
-    estimator = Estimator(image_name=args.train_url,
+    estimator = Estimator(
+                        image_uri=args.train_url,
                         role=SAGEMAKER_ROLE,
                         hyperparameters=hyperparameters,
                         train_instance_count=1,
@@ -44,7 +45,6 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=str, default=os.environ['BATCH_SIZE'])
     parser.add_argument('--epoch', type=str, default=os.environ['EPOCH'])
     args = parser.parse_args()
-
 
     
     # SFn の実行に必要な情報を渡す際のスキーマを定義します
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     )
 
     # 各 Step を連結
-    chain_list = [etl_step, training_step]
+    chain_list = [training_step]
     workflow_definition = steps.Chain(chain_list)
 
     # Workflow の作成
