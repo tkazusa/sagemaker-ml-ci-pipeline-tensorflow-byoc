@@ -61,7 +61,6 @@ if __name__ == "__main__":
     x_train, y_train = _load_mnist_data(args.train, 'train_data.npy', 'train_labels.npy')
     x_valid, y_valid = _load_mnist_data(args.train,'eval_data.npy', 'eval_labels.npy')
         
-
     # Create the Estimator
     mnist_classifier = model()
     # training
