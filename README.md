@@ -17,12 +17,7 @@ Amazon SageMaker ノートブックインスタンスを立ち上げます。
 - ノートブックインスタンスが ‘InService’ になるのを確認
 
 
-### Step3. データを Amazon S3 バケットへアップロードする
-本ハンズオンでは、ニューヨークのタクシー運賃データを活用します。
-- `dataprep.ipynb` を実行し、末尾のセルを実行した際に表示されているバケット名を保存する。
-
-
-### Step4. IAM ロールを作成する
+### Step3. IAM ロールを作成する
 データの前処理、学習といったステップやパイプラインの実行において AWS リソースが活用する IAM ロールを準備します。 IAM ロールの作成については、[こちら](https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_roles_create.html)をご確認ください。
 
 - AWS Glue の IAM ロールへ付与するポリシー: `AWSGlueServiceRole`, `S3FullAccess`
@@ -33,7 +28,7 @@ Amazon SageMaker ノートブックインスタンスを立ち上げます。
 それぞれ作成したロールの ARN は後ほど活用するので保存しておいて下さい。
 
 
-### Step.5 AWS CodeBuild のビルドプロジェクトを作成する
+### Step.4 AWS CodeBuild のビルドプロジェクトを作成する
 
 本ハンズオンでは CodeBuild でのビルド中に機械学習モデルの学習を行います。
 AWS CodeBuildから、「ビルドプロジェクト」→「ビルドプロジェクトを作成する」へ進んで下さい。ビルドプロジェクトの作成画面で設定を行っていきます。
@@ -90,7 +85,7 @@ Buildspec は下記のように指定します。
 ```
 
 
-### Step6. ビルドプロジェクトの実行
+### Step.5 ビルドプロジェクトの実行
 SageMaker Notebook 上からスクリプトへの変更を実行し、プルリクエストを更新することで、ビルドプロジェクトを実行します。
 
 - SageMaker ノートブックインスタスにて JupyterLab を開きます。
