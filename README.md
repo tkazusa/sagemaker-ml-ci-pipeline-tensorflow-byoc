@@ -40,7 +40,7 @@ AWS CodeBuildから、「ビルドプロジェクト」→「ビルドプロジ�
 
 まずは、プロジェクト名を指定します。
 
-![img1](img/img1.png)
+![img1](img/img1-byoc.png)
 
 ソースプロバイダの設定を行います。ソースプロバイダを GitHub にし、OAuth もしくはアカウントトークンを使って GitHub と接続します。
 
