@@ -3,4 +3,4 @@ train:
   data_path: 's3://sagemaker-sample-data-us-east-1/tensorflow/mnist/'
   hyper_parameter: 
     batch_size: 1
-    epoch: 1
+    epoch: 2
