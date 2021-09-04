@@ -1,5 +1,5 @@
 # ACCOUNT_ID=`aws sts get-caller-identity --query 'Account' --output text`
-ACCOUNT_ID='815969174475' 
+ACCOUNT_ID='420964472730' 
 REGION='us-east-1'
 REGISTRY_URL="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com" 
 ECR_REPOGITORY='sagemaker-tf-nightly-gpu'
