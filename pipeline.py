@@ -17,11 +17,11 @@ stepfunctions.set_stream_logger(level=logging.INFO)
 id = uuid.uuid4().hex
 
 REGION='us-east-1'
-BUCKET='sfn-sagemaker-workflow'
+BUCKET='sagemaker-us-east-1-420964472730'
 FLOW_NAME='flow_{}'.format(id) 
 TRAINING_JOB_NAME='sf-train-{}'.format(id) # JobNameの重複NGなのでidを追加している
-SAGEMAKER_ROLE = 'arn:aws:iam::815969174475:role/service-role/AmazonSageMaker-ExecutionRole-20210724T153169'
-WORKFLOW_ROLE='arn:aws:iam::815969174475:role/StepFunctionsWorkflowExecutionRole2'
+SAGEMAKER_ROLE = 'arn:aws:iam::420964472730:role/service-role/AmazonSageMaker-ExecutionRole-20201204T095531'
+WORKFLOW_ROLE='arn:aws:iam::420964472730:role/StepFunctionsWorkflowExecutionRole'
 
 def create_estimator():
     hyperparameters = {'batch_size': args.batch_size,'epochs': args.epoch}
