@@ -47,6 +47,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     
+    
     # SFn の実行に必要な情報を渡す際のスキーマを定義します
     schema = {'TrainJobName': str}
     execution_input = ExecutionInput(schema=schema)
